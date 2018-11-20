@@ -1,0 +1,1 @@
+module.exports = () => 'GraphQL implementation of Food2Fork API with additional functionality';
