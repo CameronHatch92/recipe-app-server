@@ -1,3 +1,11 @@
 type Query {
   info: String!
+  search(searchTerm: String!): [Search!]!
 }
+
+type Search {
+  title: String!
+  source_url: String!
+  image_url: String!
+}
+

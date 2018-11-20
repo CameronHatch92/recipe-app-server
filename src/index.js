@@ -13,5 +13,5 @@ const server = new GraphQLServer({
 });
 
 if(require.main === module){
-  server.start(() => console.log('Server is running'));
+  server.start({endpoint: '/graphql'},() => console.log('Server is running'));
 }
