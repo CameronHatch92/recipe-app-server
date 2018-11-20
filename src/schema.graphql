@@ -1,17 +1,35 @@
 type Query {
   info: String!
   search(searchTerm: String!): [Search!]!
+  recipes: [Recipe!]!
 }
 
 type Mutation {
   signup(email: String!, password: String!): String!
   login(email: String!, password: String!): String!
-  
+  addRecipe(recipe: newRecipe): Recipe!
 }
 
 type Search {
   title: String!
   source_url: String!
   image_url: String!
+  publisher: String!
+}
+
+input newRecipe {
+  title: String!
+  source_url: String!
+  image_url: String!
+}
+
+type Recipe{
+  id: ID!
+  title: String!
+  source_url: String!
+  image_url: String!
+  userID: ID!
+  publisher: String!
+  publisher_url: String!
 }
 
