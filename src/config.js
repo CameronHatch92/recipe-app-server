@@ -5,5 +5,6 @@ module.exports = {
   DATABASE_URL:
         process.env.DATABASE_URL || 'mongodb://localhost:27017/recipes',
   API_KEY: process.env.API_KEY,
+  JWT_SECRET: process.env.JWT_SECRET,
   FOOD2FORK_URL: 'https://www.food2fork.com/api'     
 };
