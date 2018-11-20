@@ -7,4 +7,13 @@ const UserSchema = new Schema({
   password: {type: String, required: true}
 });
 
+UserSchema.set('toObject', {
+  virtuals: true,
+  transform: (doc, result) => {
+    delete result._id;
+    delete result.__v;
+    delete result.password;
+  }
+});
+
 module.exports = mongoose.model('User', UserSchema);
