@@ -7,7 +7,7 @@ type Query {
 type Mutation {
   signup(email: String!, password: String!): String!
   login(email: String!, password: String!): String!
-  addRecipe(recipe: newRecipe): Recipe!
+  addRecipe(recipe: newRecipe): Recipe
 }
 
 type Search {
