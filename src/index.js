@@ -15,18 +15,18 @@ const resolvers = {
 const server = new GraphQLServer({
   typeDefs,
   resolvers,
-  context: incomingData => ({
-    incomingData,
-    isAuthorized: () => {
-      const AuthHeader = incomingData.request.header('authorization');
-      if(!AuthHeader){
-        throw('Unauthorized');
-      }
-      const token = AuthHeader.replace('Bearer', '');
-      const decodedToken = jwt.verify(token, JWT_SECRET);
-      return decodedToken;
-    }
-  })
+  // context: incomingData => ({ 
+  //   incomingData, 
+  //   isAuthorized: () => {
+  //     const AuthHeader = incomingData.request.header('authorization');
+  //     if(!AuthHeader){
+  //       throw('Unauthorized');
+  //     }
+  //     const token = AuthHeader.replace('Bearer ', '');
+  //     const decodedToken = jwt.verify(token, JWT_SECRET);
+  //     return decodedToken;
+  //   }
+  // })
 });
 
 if(require.main === module){

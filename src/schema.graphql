@@ -1,7 +1,7 @@
 type Query {
   info: String!
   search(searchTerm: String!): [Search!]!
-  recipes: [Recipe!]!
+  recipes: [Recipe]
 }
 
 type Mutation {
@@ -15,12 +15,15 @@ type Search {
   source_url: String!
   image_url: String!
   publisher: String!
+  publisher_url: String!
 }
 
 input newRecipe {
   title: String!
   source_url: String!
   image_url: String!
+  publisher: String!
+  publisher_url: String!
 }
 
 type Recipe{
